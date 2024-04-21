@@ -31,7 +31,7 @@ const SignUpForm = () => {
         onSubmit={onSubmit}
         className='max-w-[260px] rounded-lg border-secondary-color'
       >
-        <label className='text-fitforge-blue' htmlFor='username'>
+        <label className='text-sm text-fitforge-blue' htmlFor='username'>
           USERNAME
         </label>
         <input
@@ -40,7 +40,7 @@ const SignUpForm = () => {
           name='username'
         />
 
-        <label className='text-fitforge-blue' htmlFor='email'>
+        <label className='text-sm text-fitforge-blue' htmlFor='email'>
           EMAIL
         </label>
         <input
@@ -49,7 +49,7 @@ const SignUpForm = () => {
           name='email'
         />
 
-        <label className='text-fitforge-blue' htmlFor='password'>
+        <label className='text-sm text-fitforge-blue' htmlFor='password'>
           PASSWORD
         </label>
         <input
@@ -58,7 +58,7 @@ const SignUpForm = () => {
           name='password'
         />
 
-        <label className='text-fitforge-blue' htmlFor='repeatPassword'>
+        <label className='text-sm text-fitforge-blue' htmlFor='repeatPassword'>
           REPEAT PASSWORD
         </label>
         <input
