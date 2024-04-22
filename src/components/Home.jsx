@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 
 const Home = () => {
   return (
-    <div className='w-full h-screen p-12 bg-fitforge-black flex items-center justify-center'>
+    <div className='w-full h-screen px-12 py-20 bg-fitforge-black flex items-center justify-center'>
       <div className='h-full  w-full flex flex-col justify-between items-center'>
         <div>
           <h1 className='text-7xl text-fitforge-red text-bold mb-3'>
