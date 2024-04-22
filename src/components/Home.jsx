@@ -2,14 +2,11 @@ import { Link } from 'react-router-dom'
 
 const Home = () => {
   return (
-    <div className='w-full h-screen bg-fitforge-black flex items-center justify-center'>
-      {/*       <div className='sm:h-[50%] sm:w-1/2 sm:flex sm:justify-center sm:items-center'>
-        <div className='dumbbell-img'></div>
-      </div> */}
+    <div className='w-full h-screen p-8 bg-fitforge-black flex items-center justify-center'>
 
-      <div className='h-screen max-w-[224px] flex flex-col justify-around items-center'>
+      <div className='h-full border-2 w-full flex flex-col justify-between items-center'>
         <div>
-          <h1 className='text-5xl text-fitforge-red text-bold mb-3'>
+          <h1 className='text-7xl text-fitforge-red text-bold mb-3'>
             Welcome to FitForge
           </h1>
           <p className=' text-fitforge-blue'>Train more effectively.</p>
