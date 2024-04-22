@@ -24,7 +24,7 @@ const Home = () => {
             className='
             border-2 border-fitforge-red text-fitforge-red font-medium py-3  my-3 rounded-lg active:bg-fitforge-red active:text-fitforge-black'
           >
-            Log In
+            <Link to='login'>Log In</Link>
           </button>
         </div>
       </div>
