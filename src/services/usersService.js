@@ -1,5 +1,6 @@
 import axios from 'axios'
-const baseUrl = 'http://localhost:3001/api/v1/users'
+
+const baseUrl = `${import.meta.env.VITE_BASE_URL}/users`
 
 const allUsers = async () => {
   const { data } = await axios.get(baseUrl)

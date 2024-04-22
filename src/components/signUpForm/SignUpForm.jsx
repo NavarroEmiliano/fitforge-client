@@ -64,6 +64,8 @@ const SignUpForm = () => {
     if (users.data) setErrors(validation(userData, users.data.data))
   }, [userData])
 
+  console.log(errors)
+
   return (
     <div className='w-full h-screen px-12 py-20 bg-fitforge-black flex items-center justify-center'>
       <Notification notification={notification} />
@@ -73,7 +75,7 @@ const SignUpForm = () => {
           <div className='dumbbell-img w-[80px] h-[80px] '></div>
           <p className='text-2xl text-fitforge-red mt-1'>Create Account</p>
         </div>
-        <form onSubmit={onSubmit} className='w-full'>
+        <form onSubmit={onSubmit} className='w-full text-white'>
           <div>
             <label className='text-sm text-fitforge-blue' htmlFor='username'>
               USERNAME
