@@ -13,15 +13,20 @@ const Home = () => {
         </div>
 
         <div className='flex flex-col w-full'>
-          <button className='border-2 border-fitforge-red text-fitforge-red font-medium py-3 my-3 rounded-lg active:scale-75 duration-200'>
-            <Link to='signup'>Sign up</Link>
-          </button>
-          <button
-            className='
-            border-2 border-fitforge-red  text-fitforge-black bg-fitforge-red font-medium py-3  my-3 rounded-lg active:scale-75 duration-200' 
+          <Link
+            to='/signup'
+            className='border-2 text-center border-fitforge-red text-fitforge-red font-medium py-3 my-3 rounded-lg  duration-100'
           >
-            <Link to='login'>Log In</Link>
-          </button>
+            <button>Sign up</button>
+          </Link>
+
+          <Link
+            to='login'
+            className='
+            border-2 text-center border-fitforge-red  text-fitforge-black bg-fitforge-red font-medium py-3  my-3 rounded-lg active:scale-[0.98] duration-100'
+          >
+            <button>Log In</button>
+          </Link>
         </div>
       </div>
     </div>

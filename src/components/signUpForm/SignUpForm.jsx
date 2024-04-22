@@ -64,7 +64,6 @@ const SignUpForm = () => {
     if (users.data) setErrors(validation(userData, users.data.data))
   }, [userData])
 
-  console.log(errors)
 
   return (
     <div className='w-full h-screen px-12 py-20 bg-fitforge-black flex items-center justify-center'>
