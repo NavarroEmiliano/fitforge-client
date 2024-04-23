@@ -41,9 +41,11 @@ const LoginForm = () => {
   useEffect(() => {
     if (user)
       setTimeout(() => {
-        navigate('/')
+        navigate('/profile')
       }, 3000)
   }, [user])
+
+  console.log(user)
 
   const disabledSubmit = !loginInputs.email || !loginInputs.password
 

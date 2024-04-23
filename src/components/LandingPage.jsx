@@ -1,20 +1,8 @@
-import { useEffect } from 'react'
-import { useDispatch } from 'react-redux'
-import { Link, useNavigate } from 'react-router-dom'
-import { setUser } from '../features/user/userSlice'
+import { Link } from 'react-router-dom'
 
 const LandingPage = () => {
-  const dispatch = useDispatch()
-  const navigate = useNavigate()
 
-  useEffect(() => {
-    const userLogged = window.localStorage.getItem('loggedFitForgeUser')
-    if (userLogged) {
-      const user = JSON.parse(userLogged)
-      dispatch(setUser(user))
-      navigate('/profile')
-    }
-  }, [dispatch])
+
 
   return (
     <div className='w-full h-screen px-12 py-20 bg-fitforge-black flex items-center justify-center'>
