@@ -2,9 +2,8 @@ import axios from 'axios'
 
 const baseUrl = `${import.meta.env.VITE_BASE_URL}/users`
 
-const allUsers = async () => {
+const getAllUsers = async () => {
   const { data } = await axios.get(baseUrl)
-
   return data
 }
 
@@ -13,4 +12,4 @@ const signUpUser = async credentials => {
   return data
 }
 
-export default { signUpUser, allUsers }
+export default { signUpUser, getAllUsers }

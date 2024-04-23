@@ -14,7 +14,12 @@ export default {
       },
       backgroundImage:{
         'ok-img': "url('/src/assets/ok-img.png')",
-        'error-img' : "url('/src/assets/error-img.png')"
+        'error-img' : "url('/src/assets/error-img.png')",
+        'user-red-img' :"url('/src/assets/user-red.png')",
+        'user-gray-img' :"url('/src/assets/user-gray.png')"
+      },
+      boxShadow:{
+        'shadow-top': '0px -3px 10px -2px rgba(238,100,82,0.5)'
       }
     },
   },

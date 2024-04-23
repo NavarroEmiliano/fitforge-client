@@ -1,10 +1,11 @@
 /* eslint-disable react/prop-types */
 import { useEffect, useState } from 'react'
+import { useSelector } from 'react-redux'
 
-const Notification = ({ notification }) => {
+const Notification = () => {
   const [isVisible, setIsVisible] = useState(false)
 
-  console.log(notification)
+  const notification = useSelector(state => state.notification)
 
   useEffect(() => {
     if (notification) {

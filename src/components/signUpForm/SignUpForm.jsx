@@ -1,9 +1,12 @@
-import { useQuery } from '@tanstack/react-query'
-import usersService from '../../services/usersService'
 import { useEffect, useState } from 'react'
 import { validation, isFormValid } from './validations'
 import Notification from '../Notification'
 import { Link } from 'react-router-dom'
+import { useDispatch, useSelector } from 'react-redux'
+import {
+  createUserAction,
+  setUsersAction
+} from '../../features/users/usersSlice'
 
 const SignUpForm = () => {
   const [userData, setUserData] = useState({
@@ -15,12 +18,9 @@ const SignUpForm = () => {
 
   const [errors, setErrors] = useState({})
 
-  const [notification, setNotification] = useState(null)
+  const users = useSelector(state => state.users)
 
-  const users = useQuery({
-    queryKey: ['users'],
-    queryFn: usersService.allUsers
-  })
+  const dispatch = useDispatch()
 
   const handleInput = event => {
     setUserData({
@@ -33,41 +33,30 @@ const SignUpForm = () => {
 
   const onSubmit = async event => {
     event.preventDefault()
-
     const userForRegister = {
       userName: userData.userName,
       email: userData.email,
       password: userData.password
     }
 
-    const response = await usersService.signUpUser(userForRegister)
+    dispatch(createUserAction(userForRegister))
 
-    if (response.status === 'OK') {
-      setNotification({
-        status: response.status,
-        message: 'Congratulations, your account has been sucessfully created.'
-      })
-      setUserData({
-        userName: '',
-        email: '',
-        password: '',
-        repeatPassword: ''
-      })
-
-      setTimeout(() => {
-        setNotification(null)
-      }, 3000)
-    }
+    setUserData({
+      userName: '',
+      email: '',
+      password: '',
+      repeatPassword: ''
+    })
   }
 
   useEffect(() => {
-    if (users.data) setErrors(validation(userData, users.data.data))
+    dispatch(setUsersAction())
+    if (users.length) setErrors(validation(userData, users))
   }, [userData])
-
 
   return (
     <div className='w-full h-screen px-12 py-20 bg-fitforge-black flex items-center justify-center'>
-      <Notification notification={notification} />
+      <Notification />
 
       <div className='h-full w-full  flex flex-col justify-between items-center'>
         <div className='flex flex-col  mb-4 justify-center items-center'>
